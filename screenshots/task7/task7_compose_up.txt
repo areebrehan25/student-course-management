@@ -1,0 +1,8 @@
+$ docker compose up -d
+ Container postgres-std-L1S22BSCS0025  Running
+ Container adminer-std-L1S22BSCS0025  Running
+ Container pgadmin-std-L1S22BSCS0025  Running
+ Container postgres-std-L1S22BSCS0025  Waiting
+ Container postgres-std-L1S22BSCS0025  Waiting
+ Container postgres-std-L1S22BSCS0025  Healthy
+ Container postgres-std-L1S22BSCS0025  Healthy

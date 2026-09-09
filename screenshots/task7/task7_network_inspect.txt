@@ -1,0 +1,69 @@
+$ docker network inspect std-net-L1S22BSCS0025
+[
+    {
+        "Name": "std-net-L1S22BSCS0025",
+        "Id": "99d3ac920a94741da54acdf97e3340fa0103880af6f83066a3ba2edaf72f84f8",
+        "Created": "2026-08-30T17:41:32.785167898Z",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": null,
+            "Config": [
+                {
+                    "Subnet": "172.19.0.0/16",
+                    "Gateway": "172.19.0.1"
+                }
+            ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Options": {},
+        "Labels": {
+            "com.docker.compose.config-hash": "38d5bd66bd710d12ee43a4bb5ecbaad7b516bc9063e9102645779cf27963827b",
+            "com.docker.compose.network": "std-net-L1S22BSCS0025",
+            "com.docker.compose.project": "student-course-management",
+            "com.docker.compose.version": "2.40.3"
+        },
+        "Containers": {
+            "44983e9c6c6b0e530499a612c4647ea812a28dbbd0b1b1405e3f99d0dedd8fc8": {
+                "Name": "pgadmin-std-L1S22BSCS0025",
+                "EndpointID": "c952b9ff234839b6b825f160822966937b769855822b79d824b45b10d99d393a",
+                "MacAddress": "92:fc:f6:2b:c4:bf",
+                "IPv4Address": "172.19.0.4/16",
+                "IPv6Address": ""
+            },
+            "a3c3c16f9a041c7c1ccef623897f20753e86eaba8a15d6e9f7bf7bddbf9e4422": {
+                "Name": "postgres-std-L1S22BSCS0025",
+                "EndpointID": "4e615dde391e708c766e4351f6c0c6a213b748be0d6771bf4c9f68b89c8c8532",
+                "MacAddress": "5a:20:ab:40:d7:e5",
+                "IPv4Address": "172.19.0.2/16",
+                "IPv6Address": ""
+            },
+            "fd138fddaa9cc6fc4b37d4910e7d6350e3998955cda8c173ced96deae6928427": {
+                "Name": "adminer-std-L1S22BSCS0025",
+                "EndpointID": "867bca212f228c6764b61888d231b2ce7830b7b08b77097d139f43c0e072eafd",
+                "MacAddress": "fe:58:b0:8f:b0:fc",
+                "IPv4Address": "172.19.0.3/16",
+                "IPv6Address": ""
+            }
+        },
+        "Status": {
+            "IPAM": {
+                "Subnets": {
+                    "172.19.0.0/16": {
+                        "IPsInUse": 6,
+                        "DynamicIPsAvailable": 65530
+                    }
+                }
+            }
+        }
+    }
+]

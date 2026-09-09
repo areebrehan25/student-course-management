@@ -1,0 +1,14 @@
+# networks: and volumes: sections of docker-compose.yml
+
+networks:
+  std-net-L1S22BSCS0025:
+    name: std-net-L1S22BSCS0025
+    driver: bridge
+
+# =========================================================
+# Compose-managed named volume - persists PostgreSQL data
+# =========================================================
+volumes:
+  std-volume-L1S22BSCS0025:
+    name: std-volume-L1S22BSCS0025
+    driver: local

@@ -1,0 +1,20 @@
+# ---------------------------------------------------------
+# Environment variables for Student Course Management stack
+# Roll Number: L1S22BSCS0025
+# ---------------------------------------------------------
+
+# PostgreSQL
+POSTGRES_DB=scms_db_l1s22bscs0025
+POSTGRES_USER=areeb_admin
+POSTGRES_PASSWORD=Sc00lD3v0ps_25!
+
+# pgAdmin
+PGADMIN_DEFAULT_EMAIL=areeb.rehan@student.example.com
+PGADMIN_DEFAULT_PASSWORD=PgAdm1n_L1S22BSCS0025!
+
+# Port mappings
+PGADMIN_PORT=5050
+ADMINER_PORT=8080
+
+# Image tags
+POSTGRES_IMAGE_TAG=16

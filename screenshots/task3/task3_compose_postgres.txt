@@ -1,0 +1,24 @@
+# postgres service block
+
+  postgres:
+    image: postgres:${POSTGRES_IMAGE_TAG:-16}
+    container_name: postgres-std-L1S22BSCS0025
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - std-volume-L1S22BSCS0025:/var/lib/postgresql/data
+    networks:
+      - std-net-L1S22BSCS0025
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  # ---------------------------------------------------
+  # pgAdmin - primary web-based database admin interface
+  # ---------------------------------------------------

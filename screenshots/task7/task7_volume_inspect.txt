@@ -1,0 +1,17 @@
+$ docker volume inspect std-volume-L1S22BSCS0025
+[
+    {
+        "CreatedAt": "2026-08-30T17:41:32Z",
+        "Driver": "local",
+        "Labels": {
+            "com.docker.compose.config-hash": "c8e65786efad4eceec6c610f5638ac75f450365daf8c1c8831ecdbd713f89f59",
+            "com.docker.compose.project": "student-course-management",
+            "com.docker.compose.version": "2.40.3",
+            "com.docker.compose.volume": "std-volume-L1S22BSCS0025"
+        },
+        "Mountpoint": "/var/lib/docker/volumes/std-volume-L1S22BSCS0025/_data",
+        "Name": "std-volume-L1S22BSCS0025",
+        "Options": null,
+        "Scope": "local"
+    }
+]

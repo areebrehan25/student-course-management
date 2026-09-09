@@ -1,0 +1,5 @@
+$ docker ps
+CONTAINER ID   IMAGE                   COMMAND                  CREATED              STATUS                    PORTS                                              NAMES
+fd138fddaa9c   adminer:latest          "entrypoint.sh docke…"   59 seconds ago       Up 53 seconds             0.0.0.0:8080->8080/tcp, [::]:8080->8080/tcp        adminer-std-L1S22BSCS0025
+44983e9c6c6b   dpage/pgadmin4:latest   "/entrypoint.sh"         About a minute ago   Up 53 seconds             443/tcp, 0.0.0.0:5050->80/tcp, [::]:5050->80/tcp   pgadmin-std-L1S22BSCS0025
+a3c3c16f9a04   postgres:16             "docker-entrypoint.s…"   About a minute ago   Up 59 seconds (healthy)   5432/tcp                                           postgres-std-L1S22BSCS0025

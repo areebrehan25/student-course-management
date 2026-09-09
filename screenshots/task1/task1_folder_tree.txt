@@ -1,0 +1,17 @@
+$ tree -a -I ".git"
+.
+├── .env
+├── README.md
+├── docker-compose.yml
+└── screenshots
+    ├── task1
+    │   └── task1_folder_tree.txt
+    ├── task2
+    ├── task3
+    ├── task4
+    ├── task5
+    ├── task6
+    ├── task7
+    └── task8
+
+10 directories, 4 files

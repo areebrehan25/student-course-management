@@ -1,0 +1,5 @@
+$ docker compose ps
+NAME                         IMAGE                   COMMAND                  SERVICE    CREATED              STATUS                    PORTS
+adminer-std-L1S22BSCS0025    adminer:latest          "entrypoint.sh docke…"   adminer    59 seconds ago       Up 53 seconds             0.0.0.0:8080->8080/tcp, [::]:8080->8080/tcp
+pgadmin-std-L1S22BSCS0025    dpage/pgadmin4:latest   "/entrypoint.sh"         pgadmin    About a minute ago   Up 53 seconds             443/tcp, 0.0.0.0:5050->80/tcp, [::]:5050->80/tcp
+postgres-std-L1S22BSCS0025   postgres:16             "docker-entrypoint.s…"   postgres   About a minute ago   Up 59 seconds (healthy)   5432/tcp

@@ -1,0 +1,2 @@
+$ docker exec adminer-std-L1S22BSCS0025 getent hosts postgres
+172.19.0.2        postgres  postgres

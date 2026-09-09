@@ -1,0 +1,8 @@
+$ docker exec postgres-std-L1S22BSCS0025 psql -U areeb_admin -d scms_db_l1s22bscs0025 -c "SELECT * FROM student;"
+ id |    name     |  roll_number  |  semester   
+----+-------------+---------------+-------------
+  1 | Areeb Rehan | L1S22BSCS0025 | Spring 2026
+  2 | Ali Khan    | L1S22BSCS0102 | Spring 2026
+  3 | Sara Ahmed  | L1S22BSCS0087 | Spring 2026
+(3 rows)
+

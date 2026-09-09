@@ -1,0 +1,14 @@
+# adminer service block
+
+  adminer:
+    image: adminer:latest
+    container_name: adminer-std-L1S22BSCS0025
+    restart: unless-stopped
+    ports:
+      - "${ADMINER_PORT:-8080}:8080"
+    networks:
+      - std-net-L1S22BSCS0025
+    depends_on:
+      postgres:
+        condition: service_healthy
+

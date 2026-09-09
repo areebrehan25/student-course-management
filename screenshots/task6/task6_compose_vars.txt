@@ -1,0 +1,85 @@
+# docker-compose.yml with ${VARIABLE} references (full file)
+
+
+# =========================================================
+# Student Course Management System
+# DevOps Fundamentals - Assignment 03
+# Student: Areeb Rehan | Roll Number: L1S22BSCS0025
+# =========================================================
+# This single file owns and manages every resource used by
+# the stack: the custom bridge network, the named volume,
+# and all three services (postgres, pgadmin, adminer).
+# =========================================================
+
+services:
+
+  # ---------------------------------------------------
+  # PostgreSQL - database tier
+  # ---------------------------------------------------
+  postgres:
+    image: postgres:${POSTGRES_IMAGE_TAG:-16}
+    container_name: postgres-std-L1S22BSCS0025
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - std-volume-L1S22BSCS0025:/var/lib/postgresql/data
+    networks:
+      - std-net-L1S22BSCS0025
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  # ---------------------------------------------------
+  # pgAdmin - primary web-based database admin interface
+  # ---------------------------------------------------
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: pgadmin-std-L1S22BSCS0025
+    restart: unless-stopped
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
+    ports:
+      - "${PGADMIN_PORT:-5050}:80"
+    networks:
+      - std-net-L1S22BSCS0025
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  # ---------------------------------------------------
+  # Adminer - lightweight secondary database admin interface
+  # ---------------------------------------------------
+  adminer:
+    image: adminer:latest
+    container_name: adminer-std-L1S22BSCS0025
+    restart: unless-stopped
+    ports:
+      - "${ADMINER_PORT:-8080}:8080"
+    networks:
+      - std-net-L1S22BSCS0025
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+# =========================================================
+# Compose-managed network - created and destroyed by Compose
+# =========================================================
+networks:
+  std-net-L1S22BSCS0025:
+    name: std-net-L1S22BSCS0025
+    driver: bridge
+
+# =========================================================
+# Compose-managed named volume - persists PostgreSQL data
+# =========================================================
+volumes:
+  std-volume-L1S22BSCS0025:
+    name: std-volume-L1S22BSCS0025
+    driver: local

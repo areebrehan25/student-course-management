@@ -1,0 +1,20 @@
+# pgadmin service block
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: pgadmin-std-L1S22BSCS0025
+    restart: unless-stopped
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
+    ports:
+      - "${PGADMIN_PORT:-5050}:80"
+    networks:
+      - std-net-L1S22BSCS0025
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  # ---------------------------------------------------
+  # Adminer - lightweight secondary database admin interface
+  # ---------------------------------------------------

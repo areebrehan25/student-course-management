@@ -1,0 +1,4 @@
+$ docker volume ls
+DRIVER    VOLUME NAME
+local     df1bdc3c51da5478ca9a6b3a19da3906061884f0862fe32f11e4eb089b7b284c
+local     std-volume-L1S22BSCS0025

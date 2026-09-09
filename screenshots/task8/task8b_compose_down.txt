@@ -1,0 +1,22 @@
+$ docker compose down
+ Container pgadmin-std-L1S22BSCS0025  Stopping
+ Container adminer-std-L1S22BSCS0025  Stopping
+ Container adminer-std-L1S22BSCS0025  Stopped
+ Container adminer-std-L1S22BSCS0025  Removing
+ Container adminer-std-L1S22BSCS0025  Removed
+ Container pgadmin-std-L1S22BSCS0025  Stopped
+ Container pgadmin-std-L1S22BSCS0025  Removing
+ Container pgadmin-std-L1S22BSCS0025  Removed
+ Container postgres-std-L1S22BSCS0025  Stopping
+ Container postgres-std-L1S22BSCS0025  Stopped
+ Container postgres-std-L1S22BSCS0025  Removing
+ Container postgres-std-L1S22BSCS0025  Removed
+ Network std-net-L1S22BSCS0025  Removing
+ Network std-net-L1S22BSCS0025  Removed
+
+$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+$ docker volume ls
+DRIVER    VOLUME NAME
+local     std-volume-L1S22BSCS0025
